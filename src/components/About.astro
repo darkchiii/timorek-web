@@ -1,0 +1,86 @@
+---
+import aboutBg from '../assets/about-4.jpg';
+---
+
+<section class="about" id="o-mnie">
+  <div class="about-bg">
+    <img src={aboutBg.src} alt="" />
+  </div>
+  <div class="about-content">
+    <div class="about-left">
+      <p class="about-label">O mnie</p>
+      <h2>Dr n. med.<br><em>Agnieszka</em><br>Timorek-<br>Lemieszczuk</h2>
+    </div>
+    <div class="about-right">
+      <p>Jestem specjalistką w zakresie położnictwa i ginekologii oraz ginekologii onkologicznej. Studia medyczne ukończyłam w 1992 roku na Akademii Medycznej w Warszawie (obecnie Warszawski Uniwersytet Medyczny), a staż podyplomowy odbyłam w Mazowieckim Szpitalu Bródnowskim. Przez wiele lat byłam związana z Katedrą i Kliniką Położnictwa, Chorób Kobiecych i Ginekologii Onkologicznej Warszawskiego Uniwersytetu Medycznego, gdzie pracowałam do 2020 roku.</p>
+      <p>W 1996 i 1999 roku uzyskałam specjalizacje I i II stopnia z położnictwa i ginekologii. W 2002 roku obroniłam z wyróżnieniem pracę doktorską dotyczącą diagnostyki guzów jajnika, a w 2008 roku zdobyłam tytuł specjalisty w dziedzinie ginekologii onkologicznej. Regularnie uczestniczę w krajowych i międzynarodowych kongresach oraz szkoleniach poświęconych zdrowiu kobiety.</p>
+      <p>Od 1997 roku prowadzę prywatną praktykę ginekologiczno-położniczą w Warszawie, a także przyjmuję pacjentki w Londynie w Top Medical Clinic. Od 2022 roku pełnię funkcję ordynatora Oddziału Ginekologiczno-Położniczego Szpitala Miejskiego w Siedlcach.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.about {
+  position: relative;
+  overflow: hidden;
+  background: #2C1F14;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.about-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  padding: 80px 48px;
+  align-items: start;
+}
+
+.about-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.about h2 {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 400;
+  color: #FAF8F4;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.about h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about-right p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: #FAF8F4;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.about-right p:last-child { margin: 0; }
+</style>

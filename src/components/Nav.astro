@@ -1,0 +1,47 @@
+---
+import logoSrc from '../assets/logo.svg?url';
+---
+
+<nav class="nav">
+  <img src={logoSrc} alt="Dr Agnieszka Timorek-Lemieszczuk" class="nav-logo" />
+  <div class="nav-links">
+    <a href="#o-mnie">O mnie</a>
+    <a href="#praktyka">Praktyka</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+<style>
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  justify-content: flex-start;
+  padding: 16px 48px;
+  background: #F0EAE0;
+}
+
+.nav-logo {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+</style>

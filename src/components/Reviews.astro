@@ -1,0 +1,188 @@
+---
+---
+
+<section class="reviews" id="opinie">
+  <p class="reviews-label">Opinie pacjentek</p>
+  <div class="reviews-track">
+    <div class="review-slide">
+      <p class="review-text">„Polecam z całego serca wizytę u dr Timorek-Lemieszczuk. Profesjonalne podejście, pełne zrozumienia. Pani dr wszystko dokładnie wyjaśnia, odpowiada na pytania i daje poczucie bezpieczeństwa."</p>
+      <div class="review-meta">
+        <span class="review-name">Anna</span>
+        <span class="review-date">30 kwietnia 2026</span>
+      </div>
+    </div>
+    <div class="review-slide">
+      <p class="review-text">„Pani Doktor jest pełna empatii, a zarazem konkretna w swoich działaniach. Wsłuchuje się w to co mówi Pacjentka i tłumaczy proces leczenia. Bardzo polecam."</p>
+      <div class="review-meta">
+        <span class="review-name">Małgorzata</span>
+        <span class="review-date">16 kwietnia 2026</span>
+      </div>
+    </div>
+    <div class="review-slide">
+      <p class="review-text">„Świetna specjalistka znająca najnowsze wskazania i badania dotyczące zdrowia kobiet."</p>
+      <div class="review-meta">
+        <span class="review-name">Paulina</span>
+        <span class="review-date">26 marca 2026</span>
+      </div>
+    </div>
+    <div class="review-slide">
+      <p class="review-text">„Jestem pod opieką Pani Doktor od 25 lat. Jak zwykle wszystko na najwyższym poziomie — fachowo, delikatnie, wszystko w 100% omówione. Naprawdę polecam!"</p>
+      <div class="review-meta">
+        <span class="review-name">Joanna</span>
+        <span class="review-date">29 stycznia 2026</span>
+      </div>
+    </div>
+    <div class="review-slide">
+      <p class="review-text">„Wizyta przebiegła w bardzo komfortowych warunkach. Pani doktor jest osobą miłą i rzetelną. Zebrała szczegółowy wywiad, udzieliła wyczerpujących informacji. Jestem bardzo zadowolona."</p>
+      <div class="review-meta">
+        <span class="review-name">Agnieszka</span>
+        <span class="review-date">7 stycznia 2026</span>
+      </div>
+    </div>
+    <div class="review-slide">
+      <p class="review-text">„Doskonała Pani Doktor, rzeczowa, wyjaśni wszystko. Wdrożyła takie leki, żebym uniknęła operacji. Ogromna wiedza, bardzo dokładne badanie wyjaśnione krok po kroku."</p>
+      <div class="review-meta">
+        <span class="review-name">K.F.</span>
+        <span class="review-date">18 grudnia 2025</span>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-controls">
+    <div class="reviews-dots" id="dots"></div>
+    <div class="reviews-nav">
+      <button class="rev-btn prev-btn" aria-label="Poprzednia opinia">←</button>
+      <button class="rev-btn next-btn" aria-label="Następna opinia">→</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.review-slide');
+  const dotsContainer = document.getElementById('dots');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  slides[0].classList.add('active');
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    document.querySelectorAll('.dot')[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    document.querySelectorAll('.dot')[current].classList.add('active');
+  }
+
+  document.querySelectorAll('.next-btn').forEach(btn => {
+    btn.addEventListener('click', () => goTo((current + 1) % slides.length));
+  });
+
+  document.querySelectorAll('.prev-btn').forEach(btn => {
+    btn.addEventListener('click', () => goTo((current - 1 + slides.length) % slides.length));
+  });
+</script>
+
+<style>
+.reviews {
+  background: #F0EAE0;
+  padding: 80px 48px;
+}
+
+.reviews-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 0 0 40px;
+}
+
+.reviews-track { max-width: 800px; }
+
+.review-slide { display: none; }
+.review-slide.active { display: block; }
+
+.review-text {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.5;
+  margin: 0 0 40px;
+}
+
+.review-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.review-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--dark);
+}
+
+.review-date {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.reviews-controls {
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.reviews-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: #D6CFC4;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.active {
+  background: var(--gold);
+  width: 20px;
+  height: 8px;
+}
+
+.reviews-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.rev-btn {
+  background: none;
+  border: 0.5px solid var(--gold);
+  color: var(--gold);
+  font-size: 18px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+</style>

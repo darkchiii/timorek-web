@@ -1,0 +1,129 @@
+---
+import heroImg from '../assets/hero.jpg';
+---
+
+<section class="hero">
+  <div class="hero-photo">
+    <img src={heroImg.src} alt="Dr Agnieszka Timorek-Lemieszczuk" />
+  </div>
+
+  <div class="hero-text">
+    <p class="overline">Dr Agnieszka Timorek-Lemieszczuk · Warszawa</p>
+    <h1>
+      <span class="line1">Kompleksowa</span>
+      <span class="line2"><em>opieka</em></span>
+      <span class="line3">ginekologiczna</span>
+    </h1>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="desc">Łączę ponad 20 lat doświadczenia klinicznego z indywidualnym podejściem do każdej pacjentki i najnowszymi standardami medycznymi.</p>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn-primary">Umów wizytę</a>
+      <a href="#praktyka" class="btn-ghost">Poznaj ofertę</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: #F0EAE0;
+  padding-top: 85px;
+}
+
+.hero-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  z-index: 2;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 3;
+  padding: 48px 0 0 48px;
+  margin-top: 40px;
+}
+
+.overline {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--gold);
+  margin: 0 0 24px;
+  text-transform: none;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.line1, .line2, .line3 {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.line1 { color: var(--dark); position: relative; z-index: 3; }
+.line2 { color: var(--gold); font-style: italic; position: relative; z-index: 3; }
+.line3 { color: var(--dark); position: relative; z-index: 1; }
+
+.hero-bottom {
+  position: relative;
+  z-index: 3;
+  padding: 24px 48px 80px;
+  max-width: 550px;
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 480px;
+  margin: 0 0 48px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-primary {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #FAF8F4;
+  background: var(--gold);
+  padding: 14px 32px;
+  border-radius: 100px;
+}
+
+.btn-ghost {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  padding: 14px 32px;
+  border-radius: 100px;
+}
+</style>
