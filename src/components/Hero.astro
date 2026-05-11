@@ -126,4 +126,43 @@ h1 {
   padding: 14px 32px;
   border-radius: 100px;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 70px;
+  }
+
+  .hero-photo {
+    position: relative;
+    width: 100%;
+    height: 70vw;
+    top: auto;
+    right: auto;
+  }
+
+  .hero-text {
+    padding: 32px 24px 0;
+    margin-top: 0;
+  }
+
+  .line1, .line2, .line3 {
+    font-size: 52px;
+  }
+
+  .hero-bottom {
+    padding: 24px 24px 60px;
+    max-width: 100%;
+  }
+
+  .desc {
+    max-width: 100%;
+  }
+
+.hero-actions {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+}
 </style>

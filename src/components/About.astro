@@ -4,7 +4,7 @@ import aboutBg from '../assets/about-4.jpg';
 
 <section class="about" id="o-mnie">
   <div class="about-bg">
-    <img src={aboutBg.src} alt="" />
+    <img src={aboutBg.src} alt="" loading="eager" />
   </div>
   <div class="about-content">
     <div class="about-left">
@@ -83,4 +83,17 @@ import aboutBg from '../assets/about-4.jpg';
 }
 
 .about-right p:last-child { margin: 0; }
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 60px 24px;
+  }
+
+  .about h2 {
+    font-size: 36px;
+  }
+}
+
 </style>
