@@ -1,0 +1,149 @@
+<section class="location" id="lokalizacja">
+  <p class="location-label">Przyjmuję w dwóch lokalizacjach</p>
+  <div class="location-inner">
+    <div class="location-cards">
+      <div class="loc-card active" id="card-siedlce" data-lat="52.15546" data-lng="22.2969228" data-name="Beauty &amp; Mind Clinic" data-addr="Brzeska 125, Siedlce">
+        <p class="loc-clinic">Beauty &amp; Mind Clinic</p>
+        <p class="loc-address">Brzeska 125, Siedlce</p>
+        <div class="loc-hours">
+          <div class="loc-day"><span class="loc-day-name">Poniedziałek</span><span class="loc-day-time">14:30 – 20:00</span></div>
+        </div>
+        <a class="loc-phone" href="tel:+48601327212">+48 601 32 72 12</a>
+      </div>
+      <div class="loc-card" id="card-warszawa" data-lat="52.200272" data-lng="21.030702" data-name="Concept Medica" data-addr="Dolna 17, Warszawa">
+        <p class="loc-clinic">Concept Medica</p>
+        <p class="loc-address">Dolna 17, Warszawa - wejście od ulicy Konduktorskiej</p>
+        <div class="loc-hours">
+          <div class="loc-day"><span class="loc-day-name">Środa</span><span class="loc-day-time">14:00 – 20:00</span></div>
+          <div class="loc-day"><span class="loc-day-name">Piątek</span><span class="loc-day-time">14:00 – 20:00</span></div>
+        </div>
+        <a class="loc-phone" href="tel:+48601327212">+48 601 32 72 12</a>
+      </div>
+    </div>
+    <div id="map" class="location-map"></div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([52.15546, 22.2969228], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  const goldIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:14px;height:14px;background:#9A7B3A;border-radius:50%;border:2px solid white;"></div>',
+    iconSize: [14, 14],
+    iconAnchor: [7, 7]
+  });
+
+  const markers = {
+    siedlce: L.marker([52.15546, 22.2969228], { icon: goldIcon }).addTo(map).bindPopup('Beauty & Mind Clinic'),
+    warszawa: L.marker([52.200272, 21.030702], { icon: goldIcon }).addTo(map).bindPopup('Concept Medica')
+  };
+
+  document.querySelectorAll('.loc-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.loc-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      const lat = parseFloat(card.dataset.lat);
+      const lng = parseFloat(card.dataset.lng);
+      map.flyTo([lat, lng], 15, { duration: 1 });
+    });
+  });
+</script>
+
+<style>
+.location {
+  background: #F0EAE0;
+  padding: 80px 48px;
+}
+
+.location-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 0 0 40px;
+}
+
+.location-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 32px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.location-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loc-card {
+  background: white;
+  border: 0.5px solid #D6CFC4;
+  border-radius: 8px;
+  padding: 20px 24px;
+  cursor: pointer;
+}
+
+.loc-card.active {
+  border: 1.5px solid var(--gold);
+  background: #FAF7F2;
+}
+
+.loc-clinic {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--dark);
+  margin: 0 0 4px;
+}
+
+.loc-address {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.loc-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.loc-day {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.loc-day-name { color: var(--muted); }
+.loc-day-time { color: var(--dark); }
+
+.loc-phone {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  display: block;
+}
+
+.location-map {
+  height: 360px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+</style>

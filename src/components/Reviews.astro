@@ -1,57 +1,65 @@
 ---
+import doctorImg from '../assets/timorek.jpg';
 ---
 
 <section class="reviews" id="opinie">
-  <p class="reviews-label">Opinie pacjentek</p>
-  <div class="reviews-track">
-    <div class="review-slide">
-      <p class="review-text">„Polecam z całego serca wizytę u dr Timorek-Lemieszczuk. Profesjonalne podejście, pełne zrozumienia. Pani dr wszystko dokładnie wyjaśnia, odpowiada na pytania i daje poczucie bezpieczeństwa."</p>
-      <div class="review-meta">
-        <span class="review-name">Anna</span>
-        <span class="review-date">30 kwietnia 2026</span>
+  <div class="reviews-inner">
+    <div class="reviews-left">
+      <p class="reviews-label">Opinie pacjentek</p>
+      <div class="reviews-track">
+        <div class="review-slide">
+          <p class="review-text">„Polecam z całego serca wizytę u dr Timorek-Lemieszczuk. Profesjonalne podejście, pełne zrozumienia. Pani dr wszystko dokładnie wyjaśnia, odpowiada na pytania i daje poczucie bezpieczeństwa."</p>
+          <div class="review-meta">
+            <span class="review-name">Anna</span>
+            <span class="review-date">30 kwietnia 2026</span>
+          </div>
+        </div>
+        <div class="review-slide">
+          <p class="review-text">„Pani Doktor jest pełna empatii, a zarazem konkretna w swoich działaniach. Wsłuchuje się w to co mówi Pacjentka i tłumaczy proces leczenia. Bardzo polecam."</p>
+          <div class="review-meta">
+            <span class="review-name">Małgorzata</span>
+            <span class="review-date">16 kwietnia 2026</span>
+          </div>
+        </div>
+        <div class="review-slide">
+          <p class="review-text">„Świetna specjalistka znająca najnowsze wskazania i badania dotyczące zdrowia kobiet."</p>
+          <div class="review-meta">
+            <span class="review-name">Paulina</span>
+            <span class="review-date">26 marca 2026</span>
+          </div>
+        </div>
+        <div class="review-slide">
+          <p class="review-text">„Jestem pod opieką Pani Doktor od 25 lat. Jak zwykle wszystko na najwyższym poziomie — fachowo, delikatnie, wszystko w 100% omówione. Naprawdę polecam!"</p>
+          <div class="review-meta">
+            <span class="review-name">Joanna</span>
+            <span class="review-date">29 stycznia 2026</span>
+          </div>
+        </div>
+        <div class="review-slide">
+          <p class="review-text">„Wizyta przebiegła w bardzo komfortowych warunkach. Pani doktor jest osobą miłą i rzetelną. Zebrała szczegółowy wywiad, udzieliła wyczerpujących informacji. Jestem bardzo zadowolona."</p>
+          <div class="review-meta">
+            <span class="review-name">Agnieszka</span>
+            <span class="review-date">7 stycznia 2026</span>
+          </div>
+        </div>
+        <div class="review-slide">
+          <p class="review-text">„Doskonała Pani Doktor, rzeczowa, wyjaśni wszystko. Wdrożyła takie leki, żebym uniknęła operacji. Ogromna wiedza, bardzo dokładne badanie wyjaśnione krok po kroku."</p>
+          <div class="review-meta">
+            <span class="review-name">K.F.</span>
+            <span class="review-date">18 grudnia 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-controls">
+        <div class="reviews-dots" id="dots"></div>
+        <div class="reviews-nav">
+          <button class="rev-btn prev-btn" aria-label="Poprzednia opinia">←</button>
+          <button class="rev-btn next-btn" aria-label="Następna opinia">→</button>
+        </div>
       </div>
     </div>
-    <div class="review-slide">
-      <p class="review-text">„Pani Doktor jest pełna empatii, a zarazem konkretna w swoich działaniach. Wsłuchuje się w to co mówi Pacjentka i tłumaczy proces leczenia. Bardzo polecam."</p>
-      <div class="review-meta">
-        <span class="review-name">Małgorzata</span>
-        <span class="review-date">16 kwietnia 2026</span>
-      </div>
-    </div>
-    <div class="review-slide">
-      <p class="review-text">„Świetna specjalistka znająca najnowsze wskazania i badania dotyczące zdrowia kobiet."</p>
-      <div class="review-meta">
-        <span class="review-name">Paulina</span>
-        <span class="review-date">26 marca 2026</span>
-      </div>
-    </div>
-    <div class="review-slide">
-      <p class="review-text">„Jestem pod opieką Pani Doktor od 25 lat. Jak zwykle wszystko na najwyższym poziomie — fachowo, delikatnie, wszystko w 100% omówione. Naprawdę polecam!"</p>
-      <div class="review-meta">
-        <span class="review-name">Joanna</span>
-        <span class="review-date">29 stycznia 2026</span>
-      </div>
-    </div>
-    <div class="review-slide">
-      <p class="review-text">„Wizyta przebiegła w bardzo komfortowych warunkach. Pani doktor jest osobą miłą i rzetelną. Zebrała szczegółowy wywiad, udzieliła wyczerpujących informacji. Jestem bardzo zadowolona."</p>
-      <div class="review-meta">
-        <span class="review-name">Agnieszka</span>
-        <span class="review-date">7 stycznia 2026</span>
-      </div>
-    </div>
-    <div class="review-slide">
-      <p class="review-text">„Doskonała Pani Doktor, rzeczowa, wyjaśni wszystko. Wdrożyła takie leki, żebym uniknęła operacji. Ogromna wiedza, bardzo dokładne badanie wyjaśnione krok po kroku."</p>
-      <div class="review-meta">
-        <span class="review-name">K.F.</span>
-        <span class="review-date">18 grudnia 2025</span>
-      </div>
-    </div>
-  </div>
-  <div class="reviews-controls">
-    <div class="reviews-dots" id="dots"></div>
-    <div class="reviews-nav">
-      <button class="rev-btn prev-btn" aria-label="Poprzednia opinia">←</button>
-      <button class="rev-btn next-btn" aria-label="Następna opinia">→</button>
+    <div class="reviews-right">
+      <img src={doctorImg.src} alt="Dr Agnieszka Timorek-Lemieszczuk" />
     </div>
   </div>
 </section>
@@ -91,7 +99,20 @@
 <style>
 .reviews {
   background: #F0EAE0;
-  padding: 80px 48px;
+  padding: 20px 0 80px;
+}
+
+.reviews-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+.reviews-left {
+  padding: 80px 64px 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .reviews-label {
@@ -103,18 +124,18 @@
   margin: 0 0 40px;
 }
 
-.reviews-track { max-width: 800px; }
+.reviews-track { max-width: 100%; }
 
 .review-slide { display: none; }
 .review-slide.active { display: block; }
 
 .review-text {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   font-style: italic;
   color: var(--dark);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0 0 40px;
 }
 
@@ -138,10 +159,9 @@
 }
 
 .reviews-controls {
-  max-width: 800px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 32px;
   margin-top: 40px;
 }
 
@@ -151,20 +171,20 @@
   align-items: center;
 }
 
-.dot {
+:global(.dot) {
   width: 8px;
   height: 8px;
-  border-radius: 100px;
+  border-radius: 50%;
   background: #D6CFC4;
   border: none;
   cursor: pointer;
   padding: 0;
 }
 
-.dot.active {
+:global(.dot.active) {
   background: var(--gold);
   width: 20px;
-  height: 8px;
+  border-radius: 100px;
 }
 
 .reviews-nav {
@@ -184,5 +204,18 @@
   align-items: center;
   justify-content: center;
   border-radius: 100px;
+}
+
+.reviews-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 10%;
+  mix-blend-mode: multiply;
 }
 </style>

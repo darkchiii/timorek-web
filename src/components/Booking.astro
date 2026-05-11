@@ -1,0 +1,74 @@
+---
+import certImg from '../assets/cert.jpg';
+---
+
+<section class="booking" id="rezerwacja">
+    <h2 class="booking-heading">Zarezerwuj wizytę</h2>
+
+  <div class="booking-inner">
+    <div class="booking-content">
+<div class="booking-left">
+  <img src={certImg.src} alt="Certyfikat Jakości ZnanyLekarz 2025" class="cert-img" />
+
+  <a id="zl-url-certificate" class="zl-url" href="https://www.znanylekarz.pl/agnieszka-timorek-lemieszczuk/ginekolog-ginekolog-onkologiczny/siedlce" rel="nofollow" data-zlw-doctor="agnieszka-timorek-lemieszczuk" data-zlw-type="certificate" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Agnieszka Timorek-Lemieszczuk - ZnanyLekarz.pl</a>
+</div>
+      <div class="booking-right">
+        <a id="zl-url" class="zl-url" href="https://www.znanylekarz.pl/agnieszka-timorek-lemieszczuk/ginekolog-ginekolog-onkologiczny/siedlce" rel="nofollow" data-zlw-doctor="agnieszka-timorek-lemieszczuk" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Agnieszka Timorek-Lemieszczuk - ZnanyLekarz.pl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="//platform.docplanner.com/js/widget.js" async></script>
+
+<style>
+.booking {
+  background: #F0EAE0;
+  padding: 80px 48px;
+}
+
+.booking-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 48px;
+}
+.booking-heading {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 0 0 48px;
+  text-align: left;
+}
+
+.booking-content {
+  display: grid;
+  grid-template-columns: minmax(auto, 380px) 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.booking-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 300px;
+  margin: 0;
+}
+
+.booking-right {
+  display: flex;
+  justify-content: flex-start;
+    transform: scale(0.85);
+  transform-origin: top left;
+}
+.cert-img {
+  width: 200px;
+  margin-top: 24px;
+}
+
+
+</style>
