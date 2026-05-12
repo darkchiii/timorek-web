@@ -27,8 +27,20 @@ import certImg2 from '../assets/cert-2.jpg';
 
 <style>
 .booking {
-  background: #F0EAE0;
+  background: #FAF8F4;
   padding: 80px 48px;
+  position: relative;
+}
+
+.booking::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, #F0EAE0, #FAF8F4);
+  z-index: 0;
 }
 
 .booking-inner {
@@ -44,8 +56,9 @@ import certImg2 from '../assets/cert-2.jpg';
   text-transform: uppercase;
   margin: 0 0 48px;
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
-
 .booking-content {
   display: grid;
   grid-template-columns: minmax(auto, 380px) 1fr;
@@ -104,5 +117,6 @@ import certImg2 from '../assets/cert-2.jpg';
 .cert-img {
   width: 180px;
 }
+
 
 </style>

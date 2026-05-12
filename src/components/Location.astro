@@ -1,5 +1,7 @@
 <section class="location" id="lokalizacja">
   <p class="location-label">Przyjmuję w dwóch lokalizacjach</p>
+  <span class="location-bg-text">Lokalizacje</span>
+
   <div class="location-inner">
     <div class="location-cards">
       <div class="loc-card active" id="card-warszawa" data-lat="52.200272" data-lng="21.030702" data-name="Concept Medica" data-addr="Dolna 17, Warszawa">
@@ -60,9 +62,8 @@ document.querySelectorAll('.loc-card').forEach(card => {
 <style>
 .location {
   background: #F0EAE0;
-  padding: 80px 48px;
+  padding: 80px 48px 40px;
 }
-
 .location-label {
   font-family: var(--font-body);
   font-size: 11px;
@@ -147,6 +148,18 @@ document.querySelectorAll('.loc-card').forEach(card => {
   overflow: hidden;
 }
 
+.location-bg-text {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 180px;
+  font-weight: 400;
+  color: rgba(154, 123, 58, 0.04);
+  line-height: 1;
+  margin: 0 0 -80px;
+  padding-left: 0;
+  pointer-events: none;
+  user-select: none;
+}
 @media (max-width: 768px) {
   .location {
     padding: 60px 24px;
@@ -160,4 +173,6 @@ document.querySelectorAll('.loc-card').forEach(card => {
     height: 280px;
   }
 }
+
+
 </style>

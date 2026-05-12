@@ -1,5 +1,5 @@
 ---
-import doctorImg from '../assets/timorek.jpg';
+import doctorImg from '../assets/reviews-2.jpg';
 ---
 
 <section class="reviews" id="opinie">
@@ -102,14 +102,17 @@ import doctorImg from '../assets/timorek.jpg';
   padding: 20px 0 80px;
 }
 
+
+
 .reviews-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 600px;
+  overflow: hidden;
 }
 
 .reviews-left {
-  padding: 80px 64px 60px 48px;
+  padding: 48px 64px 48px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,11 +134,11 @@ import doctorImg from '../assets/timorek.jpg';
 
 .review-text {
   font-family: var(--font-body);
-  font-size: 22px;
-  font-weight: 300;
+  font-size: 28px;
+  font-weight: 400;
   font-style: italic;
   color: var(--dark);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0 0 40px;
 }
 
@@ -209,13 +212,16 @@ import doctorImg from '../assets/timorek.jpg';
 .reviews-right {
   position: relative;
   overflow: hidden;
+  background: #F0EAE0;
 }
 
 .reviews-right img {
-  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
   height: 100%;
-  object-fit: cover;
-  object-position: 60% 10%;
+  width: auto;
+  object-fit: contain;
   mix-blend-mode: multiply;
 }
 </style>
