@@ -1,5 +1,6 @@
 ---
 import certImg from '../assets/cert.jpg';
+import certImg2 from '../assets/cert-2.jpg';
 ---
 
 <section class="booking" id="rezerwacja">
@@ -8,8 +9,11 @@ import certImg from '../assets/cert.jpg';
   <div class="booking-inner">
     <div class="booking-content">
 <div class="booking-left">
-  <img src={certImg.src} alt="Certyfikat Jakości ZnanyLekarz 2025" class="cert-img" />
+  <div class="cert-row">
+    <img src={certImg2.src} alt="Certyfikat Jakości ZnanyLekarz 2024" class="cert-img" />
+        <img src={certImg.src} alt="Certyfikat Jakości ZnanyLekarz 2025" class="cert-img" />
 
+  </div>
   <a id="zl-url-certificate" class="zl-url" href="https://www.znanylekarz.pl/agnieszka-timorek-lemieszczuk/ginekolog-ginekolog-onkologiczny/siedlce" rel="nofollow" data-zlw-doctor="agnieszka-timorek-lemieszczuk" data-zlw-type="certificate" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Agnieszka Timorek-Lemieszczuk - ZnanyLekarz.pl</a>
 </div>
       <div class="booking-right">
@@ -89,6 +93,16 @@ import certImg from '../assets/cert.jpg';
     overflow: hidden;
     width: 100%;
   }
+}
+
+.cert-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.cert-img {
+  width: 180px;
 }
 
 </style>
