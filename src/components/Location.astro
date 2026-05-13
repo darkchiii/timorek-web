@@ -30,33 +30,35 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([52.200272, 21.030702], 14);
+  window.addEventListener('load', () => {
+    const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([52.200272, 21.030702], 14);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
-}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
 
-const goldIcon = L.divIcon({
-  className: '',
-  html: '<div style="width:14px;height:14px;background:#9A7B3A;border-radius:50%;border:2px solid white;"></div>',
-  iconSize: [14, 14],
-  iconAnchor: [7, 7]
-});
+    const goldIcon = L.divIcon({
+      className: '',
+      html: '<div style="width:14px;height:14px;background:#9A7B3A;border-radius:50%;border:2px solid white;"></div>',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7]
+    });
 
-const markers = {
-  warszawa: L.marker([52.200272, 21.030702], { icon: goldIcon }).addTo(map).bindPopup('Concept Medica'),
-  siedlce: L.marker([52.15546, 22.2969228], { icon: goldIcon }).addTo(map).bindPopup('Beauty & Mind Clinic')
-};
+    const markers = {
+      warszawa: L.marker([52.200272, 21.030702], { icon: goldIcon }).addTo(map).bindPopup('Concept Medica'),
+      siedlce: L.marker([52.15546, 22.2969228], { icon: goldIcon }).addTo(map).bindPopup('Beauty & Mind Clinic')
+    };
 
-document.querySelectorAll('.loc-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.loc-card').forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-    const lat = parseFloat(card.dataset.lat);
-    const lng = parseFloat(card.dataset.lng);
-    map.flyTo([lat, lng], 15, { duration: 1 });
+    document.querySelectorAll('.loc-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.loc-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        const lat = parseFloat(card.dataset.lat);
+        const lng = parseFloat(card.dataset.lng);
+        map.flyTo([lat, lng], 15, { duration: 1 });
+      });
+    });
   });
-});
 </script>
 
 <style>
@@ -160,6 +162,7 @@ document.querySelectorAll('.loc-card').forEach(card => {
   pointer-events: none;
   user-select: none;
 }
+
 @media (max-width: 768px) {
   .location {
     padding: 60px 24px;
@@ -172,7 +175,11 @@ document.querySelectorAll('.loc-card').forEach(card => {
   .location-map {
     height: 280px;
   }
-}
 
+  .location-bg-text {
+    font-size: 80px;
+    margin: 0 0 -40px;
+  }
+}
 
 </style>

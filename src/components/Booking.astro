@@ -82,6 +82,15 @@ import certImg2 from '../assets/cert-2.jpg';
     transform: scale(0.85);
   transform-origin: top left;
 }
+
+
+.cert-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 .cert-img {
   width: 200px;
   margin-top: 24px;
@@ -90,6 +99,10 @@ import certImg2 from '../assets/cert-2.jpg';
 @media (max-width: 768px) {
   .booking {
     padding: 60px 24px;
+  }
+
+  .booking-inner {
+    padding-left: 0;
   }
 
   .booking-content {
@@ -102,20 +115,21 @@ import certImg2 from '../assets/cert-2.jpg';
     max-width: 100%;
   }
 
+  .cert-row {
+    justify-content: center;
+  }
+
+  .cert-img {
+    width: 140px;
+  }
+
   .booking-right {
     overflow: hidden;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: none;
   }
-}
-
-.cert-row {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.cert-img {
-  width: 180px;
 }
 
 
